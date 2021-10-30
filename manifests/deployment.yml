@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: mlrborowskipipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mlrborowskipipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: mlrborowskipipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: mlrborowskipipelinesjavascriptdocker 
+          image: stocktraderreg.azurecr.io/mlrborowskipipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
